@@ -25,8 +25,8 @@ class Product(models.Model):
 class Location(models.Model):
     city = models.CharField(verbose_name="city", max_length=64, blank=True)
     phone = models.CharField(verbose_name="phone", max_length=15, blank=True)
-    email = models.CharField(verbose_name="email", max_length=128, blank=True)
+    email = models.EmailField(verbose_name="email", max_length=128, blank=True)
     address = models.CharField(verbose_name="address", max_length=128, blank=True)
 
     def __str__(self):
-        return f"{self.city} {self.address}"
+        return f"{self.pk} {self.email} {self.city} {self.address}"
